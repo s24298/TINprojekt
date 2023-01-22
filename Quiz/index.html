@@ -1,0 +1,84 @@
+<html>
+    <head>
+    
+        <link rel="stylesheet" href="style.css">
+        <script async src="Script.js"> </script>
+    </head>
+
+    <body>
+        <div class="contener" >
+            
+            <!--- ADD QUESTION   !--> 
+            
+            <div class="QuestionAddionPanel" style="display:none" id="QuestionAddionPanel" >
+         <div class="addQuestion">
+             <div class="QuestionEnum">
+            <select name="Type" id="QuizType" onchange="changeContent()">
+              <option value="1">Jednokrotnego wyboru</option>
+          <!---     
+              <option value="2">Wielokrotnego wyboru</option> 
+              <option value="3">Prawda/Falsz</option>   !-->   
+            </select>
+                 
+             </div>  
+            </div>
+            
+            <div class="QuestionValues" id="QuestionOptions">
+
+              Tresc:<input notnull type="text" id="Tresc"> 
+                
+              Odpowiedz A:<input notnull type="text" id="OdpA"> 
+              Odpowiedz B:<input notnull type="text" id="OdpB"> 
+              Odpowiedz C:<input notnull type="text" id="OdpC"> 
+              Odpowiedz D:<input notnull type="text" id="OdpD"> 
+                
+              <input type="radio" name="odp" value="a" checked> a 
+              <input type="radio" name="odp" value="b" > b 
+              <input type="radio" name="odp" value="c" > c 
+              <input type="radio" name="odp" value="d" > d 
+                
+            </div>
+            
+            
+            <div class="QuestionButtons">
+                
+                <input type="button" onclick="addQuestionToList()" value="Dodaj pytanie"> <br>
+                <input type="button" onclick="showMainMenu()" value="Powrot"> <br>
+                
+                </div>
+             </div>
+            <!--- MAIN Menu   !--> 
+            <div class="StartGame" id="StartGame">
+        
+                        <input type="text" placeholder="NAME">
+                
+                        <input type="button" placeholder="start" onclick="showGame()" value="Start">
+                
+                        <input type="button" placeholder="start" value="ADD Questions" onclick="showAddQuestion()">
+            </div>
+            <!--- QUIZ!--> 
+            
+             <div class="Quiz" id="Quiz" style="display:none">
+        
+                       
+                        <input type="button" disabled id="tresc" value="">
+                        <input type="button" onclick="getValue(this)" name="a" id="QOdpA" value="a">
+                        <input type="button" onclick="getValue(this)" name="b" id="QOdpB" value="b">
+                        <input type="button" onclick="getValue(this)" name="c" id="QOdpC" value="c">
+                        <input type="button" onclick="getValue(this)"name="d"  id="QOdpD" value="d">
+                 
+                        <input type="button" id="exit" onclick="During()" value="EXIT">
+                        <input type="button" id="next" onclick="loadNextQuestion()" value="Next">
+                 
+        </div>
+            
+            
+        </div >
+        
+
+  
+    
+    </body>
+
+
+</html>
